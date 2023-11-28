@@ -2,7 +2,7 @@
 
 ####  Explored by: 
 
-`Ravi Mandla`,`Eric Ham`-`(Bioinformatics 201, Winter-2022, UCLA)`
+`Ravi Mandla`,`Eric Ham`-`(Bioinformatics 201, Fall-2023, UCLA)`
 
 ---------
 
