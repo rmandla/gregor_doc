@@ -6,7 +6,7 @@
 
 ---------
 
-![img](img/gregor.jpg)
+![img](img/gregor.png)
 
 --------
 
