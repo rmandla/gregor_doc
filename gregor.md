@@ -21,24 +21,19 @@ GREGOR can be downloaded from the [wiki](https://genome.sph.umich.edu/wiki/GREGO
 
 ### Tutorial: 
 
-We created a tutorial to use GREGOR to test for enrichment between association statistics and genomic regions available [at this link](https://colab.research.google.com/drive/1iwNnEjuJbJ9pyQ9KG7inCQt1LQzlJxTQ?usp=sharing)
+We created a tutorial to use GREGOR to test for enrichment between association statistics and genomic regions available UPDATE LINK TO GREGOR TUTORIAL [at this link](https://colab.research.google.com/drive/1iwNnEjuJbJ9pyQ9KG7inCQt1LQzlJxTQ?usp=sharing)
 
 ### Use cases: 
 
-we present two cases centered around analyzing rare cell types.
+We present two cases focused on identifying enrichment between association results and genomic regions.
 
-1. Task: Given a scRNA-seq data set with rare cell types, identify the marker genes
-Background: To better understand rare cell types, we can identify genes that are
-distinct in their gene expression profile
-Goal: Identify marker genes for rare cell types
-Method: API pipeline with some downsampling to balance class sizes
-Outcome: Marker genes for rare cell types
-
-2. Task: Given a scRNA-seq data set with rare cell types, construct a trajectory mapping
-the relationships between all cell types
-Background: To better understand rare cell types, we can look at their ontological
-frame with respect to other cell types mapped in some embedding space
-Goal: Append rare cell types to lineage tree of more common cell types
-Method: API pipeline with a separate projection of rare cell types to embedding after
-initial trajectory construction
-Outcome: Cell type trajectory
+1. **Task**: Given the summary statistics from a GWAS for a specific trait, identify the cell or tissue types involved in the trait.
+    * **Background**: To understand the biology underlying complex traits, we can see which cell types are likely involved in the association
+    * **Goal**: Identify cell or tissue types underlying a GWAS
+    * **Method**: Test for enrichment between index variants from a GWAS with epigenomic regions for different cell or tissue types. 
+    * **Outcome**: P-value and size of the SNP intersection for each epigenomic dataset.
+2. **Task**: Given the summary statistics from a GWAS for a specific trait, identify the cell or tissue types involved in the trait.
+    * **Background**: To understand the biology underlying complex traits, we can see which cell types are likely involved in the association
+    * **Goal**: Identify cell or tissue types underlying a GWAS
+    * **Method**: Test for enrichment between index variants from a GWAS with epigenomic regions for different cell or tissue types. 
+    * **Outcome**: P-value and size of the SNP intersection for each epigenomic dataset.
