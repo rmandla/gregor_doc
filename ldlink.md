@@ -25,7 +25,7 @@ different modules for specific data. Instructions on getting access to this API 
 
 ### Tutorial: 
 
-We created a tutorial to use LDlink to download a list of variants in LD with a specified variant [at this link](https://colab.research.google.com/drive/1iwNnEjuJbJ9pyQ9KG7inCQt1LQzlJxTQ?usp=sharing)
+We created a tutorial to use LDlink to download a list of variants in LD with a specified variant [at this link](https://colab.research.google.com/drive/1vBk1XutVZIHtuxYq4zJCBcR6lZA1EcIx?usp=sharing).
 
 ### Use cases: 
 
