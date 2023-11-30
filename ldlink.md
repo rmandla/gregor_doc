@@ -29,6 +29,8 @@ We created a tutorial to use LDlink to download a list of variants in LD with a 
 
 ### Use cases: 
 
+Retrieve LD information and allele frequencies for a list of variants. With LDproxy, you can input a variant and get out all nearby variants, their LD statistics, and their allele frequency values for a specified population. This can be iterated to get this information for all variants of interest. Comparing genetic association studies to other association studies or omics datasets. When looking for overlap of a genetic association and another genetic association or a genomic region, its important to consider the LD of the variants. For example, if you performed a GWAS and want to see if your top association has been previously associated with anything else before, the LDtrait module will search for all GWAS catalog variants in LD with your variant. This will provide you with a more comprehensive list of known associations than just searching the GWAS catalog for your variant.
+
 ## Task 2:
 1. **Task**: Given a list of variants identified in an eQTL, identify which are associated with a trait.
     * **Background**: A majority of variants associated with a trait are non-coding, raising the possibility they may be involved in gene regulation. 
