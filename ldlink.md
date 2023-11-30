@@ -29,6 +29,7 @@ We created a tutorial to use LDlink to download a list of variants in LD with a 
 
 ### Use cases: 
 
+## Task 2:
 1. **Task**: Given a list of variants identified in an eQTL, identify which are associated with a trait.
     * **Background**: A majority of variants associated with a trait are non-coding, raising the possibility they may be involved in gene regulation. 
     * **Goal**: Identify traits which have an overlap of associations with eQTL from a specific tissue.
