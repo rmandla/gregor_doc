@@ -34,10 +34,10 @@ We created a tutorial to use LDlink to download a list of variants in LD with a 
 
 ## Comparing the genetic architecture of eQTL results with that of different traits:
 1. **Task**: Given a list of variants identified in an eQTL, identify which are associated with a trait.
-    * **Background**: A majority of variants associated with a trait are non-coding, raising the possibility they may be involved in gene regulation. In addition, multiple sequencing sites have generated joint modality profiling such as RNA sequencing (bulk and single cell) along the DNA sequencing result from the same individual. Allowing eQTL calling and functional identification on how these non-coding SNPs could be associated with gene expression level.  
+    * **Background**: A majority of variants associated with a trait are non-coding, raising the possibility they may be involved in gene regulation. In addition, multiple sequencing sites have generated joint modality profiling such as RNA sequencing (bulk and single cell) along with DNA sequencing result from the same individual, allowing eQTL calling and functional identification on how these non-coding SNPs could be associated with gene expression level. Exploring how eQTL datasets and GWAS overlap can better shed light on the function of these non-coding variants.  
     * **Goal**: Identify traits which have an overlap of associations with eQTL from a specific tissue.
     * **Method**: Pull all variants, or LD proxy variants, associated with an eQTL and a different set of traits. 
-    * **Outcome**: Variant IDs and LD information, and the number of associations in both an eQTL and a specified set of traits.
+    * **Outcome**: Variant IDs, LD information, the number of associations in both an eQTL and a specified set of traits, and summary statistics for the associations.
 2. **Method**:
     * **step1**: pull eQTL variants from GTEx using the GTEx [api](https://gtexportal.org/api/v2/redoc#tag/Static-Association-Endpoints/operation/get_significant_single_tissue_eqtls_api_v2_association_singleTissueEqtl_get) to obtain summary statistic files for genome-wide significant single-tissue eQTLs for each tissue separately. Primarily we will need gene ids, variant ids, and tissue type information. 
 ![img](img/gtex.png)
