@@ -40,4 +40,19 @@ Retrieve LD information and allele frequencies for a list of variants. With LDpr
 2. **Method**:
     * **step1**: pull eQTL variants from API (insert link) within GTEX to obtain a summary statistic file containing queries with respect to tissue and other filter flags.
     * **step2**: using LDtrait API, input the list of variants from the summary statistic file we pulled previously. Specify population of interest to get a table of variants and each of their associations (containing the traits, other variants in LD, r^2
-    * **step3**: merge the table form step 1 and step 2 together to obtain variants associated within LD to each traits with respect to tissue types. 
+    * **step3**: merge the table form step 1 and step 2 together to obtain variants associated within LD to each traits with respect to tissue types.
+  
+## Expected output:
+the expected output will be a dataframe containing the following information from LDtrait API and GTEX eQTL:
+1. GWAS trait that the SNP is assocaited with.
+2. PMID for publication supporting the result
+3. RSID for each SNP
+4. chromosomal location for the SNP
+5. Allele frequencies
+6. R^2
+7. D' LD statistic
+8. Risk allele frequncy (from GWAS catalogue)
+9. odd risk or beta
+10. effect size confidence interval
+11. p value for each snp
+12. Additional columns with respect to the summary statistics from eQTL studies.
