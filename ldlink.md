@@ -29,30 +29,34 @@ We created a tutorial to use LDlink to download a list of variants in LD with a 
 
 ### Use cases: 
 
-Retrieve LD information and allele frequencies for a list of variants. With LDproxy, you can input a variant and get out all nearby variants, their LD statistics, and their allele frequency values for a specified population. This can be iterated to get this information for all variants of interest. Comparing genetic association studies to other association studies or omics datasets. When looking for overlap of a genetic association and another genetic association or a genomic region, its important to consider the LD of the variants. For example, if you performed a GWAS and want to see if your top association has been previously associated with anything else before, the LDtrait module will search for all GWAS catalog variants in LD with your variant. This will provide you with a more comprehensive list of known associations than just searching the GWAS catalog for your variant.
+1. LDHap identifies all possible haplotypes for a list of variants and then determines the frequencies with which each haplotype is inherited for a given input population. For example, say you performed a genome wide association study (GWAS) and found that a particular set of variants are predictive of a phenotype like disease state. LDHap would allow you to identify whether this set of variants is likely to be inherited together as a haplotype.
+2. Create a small reference panel. LDmatrix is another module that creates a matrix of pairwise LD statistics (R^2 or D’) for an input list of variants. This gives you an idea of whether two variants are likely to be inherited together. This matrix can be used to create heatmaps to visualize the LD information in a specific region, or can be used to generate a reference panel to be used in different downstream analyses.
 
-## Task 2:
+## Comparing the genetic architecture of eQTL results with that of different traits:
 1. **Task**: Given a list of variants identified in an eQTL, identify which are associated with a trait.
     * **Background**: A majority of variants associated with a trait are non-coding, raising the possibility they may be involved in gene regulation. In addition, multiple sequencing sites have generated joint modality profiling such as RNA sequencing (bulk and single cell) along the DNA sequencing result from the same individual. Allowing eQTL calling and functional identification on how these non-coding SNPs could be associated with gene expression level.  
     * **Goal**: Identify traits which have an overlap of associations with eQTL from a specific tissue.
     * **Method**: Pull all variants, or LD proxy variants, associated with an eQTL and a different set of traits. 
     * **Outcome**: Variant IDs and LD information, and the number of associations in both an eQTL and a specified set of traits.
 2. **Method**:
-    * **step1**: pull eQTL variants from API (insert link) within GTEX to obtain a summary statistic file containing queries with respect to tissue and other filter flags.
-    * **step2**: using LDtrait API, input the list of variants from the summary statistic file we pulled previously. Specify population of interest to get a table of variants and each of their associations (containing the traits, other variants in LD, r^2
+    * **step1**: pull eQTL variants from GTEx using the GTEx [api](https://gtexportal.org/api/v2/redoc#tag/Static-Association-Endpoints/operation/get_significant_single_tissue_eqtls_api_v2_association_singleTissueEqtl_get) to obtain summary statistic files for genome-wide significant single-tissue eQTLs for each tissue separately. Primarily we will need gene ids, variant ids, and tissue type information. 
+![img](img/gtex.png)
+    * **step2**: using LDtrait API, input the list of variants from the summary statistic file we pulled previously from GTEx. Since GTEx participants are mostly of European ancestry, we can specify to only consider EUR LD information and include only associations in LD with an eQTL by an R2 cutoff of 0.8. With LDtrait, we will get a table of all GWAS catalog associations for our input variants or variants in LD with our input variants via our R2 cutoff.
+![img](img/ldtrait.png)
     * **step3**: merge the table form step 1 and step 2 together to obtain variants associated within LD to each traits with respect to tissue types.
   
 ## Expected output:
 the expected output will be a dataframe containing the following information from LDtrait API and GTEX eQTL:
-1. GWAS trait that the SNP is assocaited with.
-2. PMID for publication supporting the result
-3. RSID for each SNP
-4. chromosomal location for the SNP
-5. Allele frequencies
-6. R^2
-7. D' LD statistic
-8. Risk allele frequncy (from GWAS catalogue)
-9. odd risk or beta
-10. effect size confidence interval
-11. p value for each snp
-12. Additional columns with respect to the summary statistics from eQTL studies.
+1. The input variant to LDtrait
+2. GWAS trait that the SNP is assocaited with.
+3. PMID for publication supporting the result
+4. RSID for each SNP
+5. chromosomal location for the SNP
+6. Allele frequencies
+7. R^2
+8. D' LD statistic
+9. Risk allele frequncy (from GWAS catalogue)
+10. odd risk or beta
+12. effect size confidence interval
+13. p value for each snp
+13. Additional columns with respect to the summary statistics from eQTL studies.
