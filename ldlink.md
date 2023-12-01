@@ -33,7 +33,11 @@ Retrieve LD information and allele frequencies for a list of variants. With LDpr
 
 ## Task 2:
 1. **Task**: Given a list of variants identified in an eQTL, identify which are associated with a trait.
-    * **Background**: A majority of variants associated with a trait are non-coding, raising the possibility they may be involved in gene regulation. 
+    * **Background**: A majority of variants associated with a trait are non-coding, raising the possibility they may be involved in gene regulation. In addition, multiple sequencing sites have generated joint modality profiling such as RNA sequencing (bulk and single cell) along the DNA sequencing result from the same individual. Allowing eQTL calling and functional identification on how these non-coding SNPs could be associated with gene expression level.  
     * **Goal**: Identify traits which have an overlap of associations with eQTL from a specific tissue.
     * **Method**: Pull all variants, or LD proxy variants, associated with an eQTL and a different set of traits. 
     * **Outcome**: Variant IDs and LD information, and the number of associations in both an eQTL and a specified set of traits.
+2. **Method**:
+    * **step1**: pull eQTL variants from API (insert link) within GTEX to obtain a summary statistic file containing queries with respect to tissue and other filter flags.
+    * **step2**: using LDtrait API, input the list of variants from the summary statistic file we pulled previously. Specify population of interest to get a table of variants and each of their associations (containing the traits, other variants in LD, r^2
+    * **step3**: merge the table form step 1 and step 2 together to obtain variants associated within LD to each traits with respect to tissue types. 
