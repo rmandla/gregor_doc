@@ -30,7 +30,7 @@ We created a tutorial to use LDlink to download a list of variants in LD with a 
 ### Use cases: 
 
 1. LDHap identifies all possible haplotypes for a list of variants and then determines the frequencies with which each haplotype is inherited for a given input population. For example, say you performed a genome wide association study (GWAS) and found that a particular set of variants are predictive of a phenotype like disease state. LDHap would allow you to identify whether this set of variants is likely to be inherited together as a haplotype.
-2. Create a small reference panel. LDmatrix is another module that creates a matrix of pairwise LD statistics (R^2 or D’) for an input list of variants. This gives you an idea of whether two variants are likely to be inherited together. This matrix can be used to create heatmaps to visualize the LD information in a specific region, or can be used to generate a reference panel to be used in different downstream analyses.
+2. Visualize the LD structure of a genomic region. LDmatrix is another module that creates a matrix of pairwise LD statistics (R^2 or D’) for an input list of variants. This gives you an idea of whether two variants are likely to be inherited together. This matrix can be used to create heatmaps to visualize the LD information in a specific region, or can be used to generate a reference panel to be used in different downstream analyses.
 
 ## Comparing the genetic architecture of eQTL results with that of different traits:
 1. **Task**: Given a list of variants identified in an eQTL, identify which are associated with a trait.
